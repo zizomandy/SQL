@@ -1,0 +1,47 @@
+
+/** Store list
+books (20) ($5) aisle_1
+dvds (100) ($10) aisle_7
+cds (50)($15) aisle_12
+headphones (10) ($20) aisle_11
+t-shirts (25) ($8) aisle_2
+cleaner (30) ($3) aisle_4
+cd- player (120) ($25) aisle_10
+tvs (80)($100) aisle_3
+antenna (70) ($11.99) aisle_5
+laptop (200) ($150) aisle_9
+plugs (150) ($12) aisle_6
+lights (65) ($18) aisle_8
+brush (20) ($10) aisle_14
+polish (25) ($7) aisle_15
+spray (10) ($3) aisle_16
+charger (45) ($40) aisle_13
+**/
+
+CREATE table storelist (id INTEGER primary key,name TEXT, quantity Integer, price INTEGER,aisle INTEGER);
+
+Insert INTO storelist values (1,"books",20,5,"aisle_1");
+Insert INTO storelist values (2,"dvds",10,10,"aisle_7");
+Insert INTO storelist values (3,"cds",50,15,"aisle_12");
+Insert INTO storelist values (4,"headphone",10,20,"aisle_11");
+Insert INTO storelist values (5, "t-shirts",25,8,"aisle_2");
+Insert INTO storelist values (6, "cleaner",30,3,"aisle_4");
+Insert INTO storelist values (7,"cdplayer",120,25,"aisle_10");
+Insert INTO storelist values (8,"tvs",80,100,"aisle_3");
+Insert INTO storelist values (9,"antennaes",70,11,"aisle_5");
+Insert INTO storelist values (10,"laptop",200,150,"aisle_9");
+Insert INTO storelist values (11,"plugs", 150,12,"aisle_6");
+INsert INTO storelist values (12,"lights", 65,18,"aisle_8");
+Insert INTO  storelist values (13,"charger",45,40,"aisle_13");
+Insert INTO storelist values (14,"brush",25,7,"aisle_15");
+Insert into storelist values (15,"spray",10,3,"aisle_16");
+
+select *from storelist;
+select * from storelist order by quantity;
+select * from storelist order by aisle;
+select * from storelist where price <20;
+
+Created store database by name of item and created database based on
+what aisle can each item be found on starting from aisle 1 to 15;
+
+sorted each item by price from lowest to highest;
