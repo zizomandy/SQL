@@ -1,0 +1,24 @@
+
+/** famous people and their famous lives**/
+CREATE TABLE famous_people (id INTEGER, age INTEGER PRIMARY KEY,actor TEXT, city TEXT, art TEXT);
+CREATE TABLE claim_to_fame (id INTEGER PRIMARY KEY, movie TEXT, actor TEXT, song TEXT);
+
+INSERT INTO famous_people VALUES (2,50,'Ben Affleck', 'Berkley','The Town');
+INSERT INTO famous_people VALUES (4,54, 'Jason Statham', 'Shirebrook', 'Transporter');
+INSERT INTO famous_people VALUES (8,42, 'Chris Evans', 'Boston', 'Captain America');
+INSERT INTO famous_people VALUES (8,51,'Jennifer Garner', 'Houston', '13 Goin on 30');
+INSERT INTO famous_people VALUES (6,27, 'Florence Pugh', 'Oxford', 'Little Women');
+INSERT INTO famous_people VALUES (4,83,'Tina Turner', 'Brownsville', 'Whats love got to do with it');
+INSERT INTO famous_people VALUES (1,36,'Kesha', 'Los Angeles','Tik Tok');
+INSERT INTO famous_people VALUES (9,55,' Celine','Charlemagne', 'Power of Love');
+INSERT INTO famous_people VALUES (7,49, 'Whitney Houston','Newark', 'I will always love you');
+
+/**INNER JOIN**/
+SELECT * FROM famous_people;
+
+/**JOIN singers with the songs**/
+
+SELECT famous_people.actor, famous_people.art
+FROM famous_people
+LEFT JOIN claim_to_fame
+ON famous_people.id = claim_to_fame.id;
