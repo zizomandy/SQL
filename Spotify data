@@ -1,0 +1,50 @@
+# For this project, I downloaded Spotify data from Kaggle.
+# Then I created a table to insert Spotify data into.
+#  I then performed analytics on the data using SQL. 
+
+CREATE TABLE BIT_DB.Spotifydata (
+id integer PRIMARY KEY,
+artist_name varchar NOT NULL,
+track_name varchar NOT NULL,
+track_id varchar NOT NULL,
+popularity integer NOT NULL,
+danceability decimal(4,3) NOT NULL,
+energy decimal(4,3) NOT NULL,
+song_key integer NOT NULL,
+loudness decimal(5,3) NOT NULL,
+song_mode integer NOT NULL,
+speechiness decimal(5,4) NOT NULL,
+acousticness decimal(6,5) NOT NULL,
+instrumentalness decimal(8,7) NOT NULL,
+liveness decimal(5,4) NOT NULL,
+valence decimal(4,3) NOT NULL,
+tempo decimal(6,3) NOT NULL,
+duration_ms integer NOT NULL,
+time_signature integer NOT NULL )
+
+#I then inserted the data into the table
+#I was able to use what I have learned to write questions for the data and answer those questions using SQLlite
+using the following SQL
+
+#I determined what data was in the Spotify data so as to see what data we can question
+SELECT * FROM BIT_DB.Spotifydata
+
+#I determined what the artist popularity rates were
+SELECT artist_name
+FROM BIT_DB.Spotifydata
+WHERE popularity BETWEEN 60 AND 80
+
+#Then I determined the avg  danceability,energy,loudness and song mode
+by artist and track
+
+SELECT id, artist_name,avg(danceability),avg(energy),loudness,song_mode
+FROM BIT_DB.Spotifydata
+Group By artist_name, track_name
+
+#I then organised the tempos by Desc
+SELECT * 
+FROM BIT_DB.Spotifydata
+ORDER BY tempo DESC;
+
+
+
